@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "***REMOVED***",
+    apiKey: "AIzaSyDnywzDoaL_2OJdttBdAmCZaoILmt4DY-I",
     authDomain: "todo-app-745fd.firebaseapp.com",
     databaseURL: "https://todo-app-745fd.firebaseio.com",
     projectId: "todo-app-745fd",
