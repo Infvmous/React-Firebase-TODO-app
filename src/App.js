@@ -31,10 +31,10 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Our TODO list <span role="img" aria-label="list">📃</span></h1>
+      <h1>TODO list <span role="img" aria-label="list">📃</span></h1>
       <form>
         <FormControl>
-          <InputLabel>Write a Todo</InputLabel>
+          <InputLabel>What to do</InputLabel>
           <Input
             value={input}
             onChange={event => setInput(event.target.value)}
@@ -45,13 +45,13 @@ function App() {
           onChange={event => setInput(event.target.value)}
         /> */}
 
-        <Button
+        < Button
+          onClick={addTodo}
           disabled={!input}
           type="submit"
-          onClick={addTodo}
           variant="contained"
           color="primary"
-        >Add todo</Button>
+        >Add Todo</Button>
         {/* <button type="submit" onClick={addTodo}>Add TODO</button> */}
       </form>
 

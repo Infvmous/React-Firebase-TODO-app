@@ -37,10 +37,6 @@ function Todo(props) {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [input, setInput] = useState();
-    
-    const handleOpen = () => {
-        setOpen(true);
-    };
 
     const updateTodo = () => {
         // Update the Todo with the new input text
@@ -86,20 +82,20 @@ function Todo(props) {
             <ListItem>
                 <ListItemText
                     primary={props.todo.todo}
-                    secondary="Deadline ⏰"
+                    secondary="Dummy Deadline ⏰"
                 />
+                <Button
+                    onClick={e => setOpen(true)}
+                    variant="outlined"
+                    color="primary"
+                    size="small"
+                >Edit</Button>
+                <IconButton aria-label="delete">
+                    <DeleteIcon onClick={event => {
+                        db.collection('todos').doc(props.todo.id).delete()
+                    }}></DeleteIcon>
+                </IconButton>
             </ListItem>
-            <Button
-                onClick={e => setOpen(true)}
-                variant="outlined"
-                color="primary"
-                size="small"
-            >Edit</Button>
-            <IconButton aria-label="delete">
-                <DeleteIcon onClick={event => {
-                    db.collection('todos').doc(props.todo.id).delete()
-                }}></DeleteIcon>
-            </IconButton>
         </List>
         </>
         // <div>
